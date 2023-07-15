@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="UserName" value="ashwinimasil@gmail.com"/>
+  <parameter name="URL" value="https://login.salesforce.com/"/>
+  <parameter name="Password" value="Rajash123$"/>
+  <test thread-count="5" parallel="classes" name="Test-marathon(failed)">
+    <classes>
+      <class name="marathon.CreateIndividuals">
+        <methods>
+          <include name="createIndividuals" invocation-numbers="3"/>
+          <include name="preCondition"/>
+          <include name="close"/>
+          <include name="setvalues"/>
+        </methods>
+      </class> <!-- marathon.CreateIndividuals -->
+    </classes>
+  </test> <!-- Test-marathon(failed) -->
+</suite> <!-- Failed suite [Suite] -->
