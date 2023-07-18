@@ -1,10 +1,25 @@
 package runner;
 
-import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.Test;
+
 import marathon.BaseClass;
-@CucumberOptions(features="src/main/java/features/CreateIndividuals.feature",
-glue="pages",monochrome=true,publish =true)
+import pages.TC001_LoginPage;
+
 public class RunIndividuals extends BaseClass{
-	
-	
+	@Test
+	public void runIndividuals() {
+		TC001_LoginPage lp = new TC001_LoginPage();
+		lp.enterUserName("ashwinimasil@gmail.com")
+		.enterPassword("Rajash123$")
+		.clickLogin()
+		.clickWaffle()
+		.viewAll()
+		.clickPartyConsent()
+		.clickIndividuals()
+		.individualLink()
+		.newIndividualTab()
+		.enterLName("kumar")
+		.clickSave()
+		.verifyIndividuals();		
+}
 }

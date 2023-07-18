@@ -21,7 +21,7 @@ public class RunDeleteIndividuals extends BaseClass{
 		.clickDelete()
 		.popUpDelete()
 		.verifyAgain()
-		.searchDeletedNameinSearchTextBox();
+		.searchNameinSearchTextBoxthatsDeleted();
 		
 	}
 

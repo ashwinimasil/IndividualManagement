@@ -9,9 +9,18 @@ public class RunEditIndividuals extends BaseClass{
 @Test
 public void runnerEditIndividuals()  throws InterruptedException {
 TC001_LoginPage  lpage = new TC001_LoginPage();
-lpage.enterUserName("ashwinimasil@gmail.com").enterPassword("Rajash123$").clickLogin().clickWaffle().viewAll().clickPartyConsent()
+lpage.enterUserName("ashwinimasil@gmail.com")
+.enterPassword("Rajash123$")
+.clickLogin()
+.clickWaffle()
+.viewAll()
+.clickPartyConsent()
 .clickIndividuals()
-.individualLink().firstElementTriangle().editIndividual()
-.clickMr().clickSave().verifyFirstName();
+.individualLink()
+.firstElementTriangle()
+.editIndividual()
+.clickMr()
+.clickSave()
+.verifyFirstName();
 	}
 	}

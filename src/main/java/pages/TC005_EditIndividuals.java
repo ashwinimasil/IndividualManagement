@@ -12,14 +12,12 @@ public class TC005_EditIndividuals extends BaseClass {
 		driver.findElement(By.xpath("//a[@class='select']")).click();
 		return this;
 	}
-
 	@And("Enter the first name as (.*)$")
 	public TC005_EditIndividuals clickMr() {
 		driver.findElement(By.xpath("//a[text()='Mr.']")).click();
 		driver.findElement(By.xpath("//input[contains(@class,'firstName')]")).sendKeys("Ganesh");
 		return this;
 	}
-
 	@And("Click on Save")
 	public TC005_EditIndividuals clickSave() throws InterruptedException {
 		driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
@@ -39,5 +37,4 @@ public class TC005_EditIndividuals extends BaseClass {
 
 		return new TC005_EditIndividuals();
 	}
-
 }

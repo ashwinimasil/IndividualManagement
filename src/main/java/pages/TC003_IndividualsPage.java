@@ -10,27 +10,20 @@ import marathon.BaseClass;
 
 public class TC003_IndividualsPage extends BaseClass 
 {
-	
-	@And("Click on the New Individuals tab")
-	public TC004_NewIndividuals newIndividual() throws InterruptedException 
-	{
-		driver.findElement(
-				By.xpath("//div[@class='slds-context-bar__label-action slds-p-left--none slds-p-right--x-small']//a"))
-				.click();
-		Thread.sleep(5000);
-		WebElement clk = driver.findElement(By.xpath("//span[text()='New Individual']"));
-		driver.executeScript("arguments[0].click();", clk);
-		return new TC004_NewIndividuals();
-	}
-
 	@And("Search the deleted name in search textbox")
-	public TC003_IndividualsPage searchDeletedNameinSearchTextBox() throws InterruptedException 
+	public TC003_IndividualsPage searchNameinSearchTextBoxthatsDeleted() throws InterruptedException 
 	{
 		driver.findElement(By.xpath("//input[@class='slds-input']")).sendKeys("Kumars", Keys.ENTER);
 		Thread.sleep(3000);
 		return this;
 	}
-
+	@And("Search the Individuals (.*)$")
+	public TC003_IndividualsPage searchIndividual() {
+		WebElement name = driver.findElement(By.xpath("//input[@name='Individual-search-input']"));
+		name.sendKeys("Kumars");
+		name.sendKeys(Keys.ENTER);
+		return this;
+	}
 	@Then("Verify again")
 	public TC003_IndividualsPage verifyAgain() 
 	{
@@ -48,41 +41,12 @@ public class TC003_IndividualsPage extends BaseClass
 			return this;
 					
 	}
-	@And("Click on the Individuals tab")
-	public TC003_IndividualsPage individualLink() {
-		WebElement clk = driver.findElement(By.xpath("//a[@title='Individuals']//span[1]"));
+	@And("Click on the Individuals link")
+	public TC004_NewIndividuals individualLink() {
+		WebElement clk = driver.findElement(By.xpath("//a[@title='Individuals']"));
 		driver.executeScript("arguments[0].click();", clk);
-		return this;
+		driver.findElement(By.xpath("//div[@class='slds-context-bar__label-action slds-p-left--none slds-p-right--x-small']//a")).click();
+		return new TC004_NewIndividuals();
 	}
 	
-	@And("Click on the Dropdown icon")
-	public TC003_IndividualsPage firstElementTriangle() throws InterruptedException {
-		Thread.sleep(3000);
-		// .sendKeys("Kumars",Keys.ENTER);
-		WebElement ele = driver
-				.findElement(By.xpath("//div[@class='forceVirtualActionMarker forceVirtualAction']/a[@role='button']"));
-		driver.executeScript("arguments[0].click();", ele);
-		return this;
-	}
-
-	@And("Select Edit")
-	public TC005_EditIndividuals editIndividual() throws InterruptedException {
-		Thread.sleep(3000);
-		WebElement edit = driver.findElement(By.xpath("//a[@title='Edit']/div"));
-		driver.executeScript("arguments[0].click();", edit);
-		return new TC005_EditIndividuals();
-	}
-
-	@And("Select Delete")
-	public TC006_DeleteIndividuals clickDelete() throws InterruptedException {
-		WebElement delete = driver.findElement(By.xpath("//a[@role='menuitem']/div[@title='Delete']"));
-		driver.executeScript("arguments[0].click();", delete);
-		Thread.sleep(3000);
-		return new TC006_DeleteIndividuals();
-	}
-
 }
-
-
-
-
