@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="runner.RunDeleteIndividuals">
+      <class name="runner.RunIndividuals">
         <methods>
           <include name="setUpClass"/>
           <include name="tearDownClass"/>
-          <include name="rundeleteIndividualsbyLastName"/>
           <include name="preCondition"/>
           <include name="close"/>
+          <include name="runIndividuals"/>
         </methods>
-      </class> <!-- runner.RunDeleteIndividuals -->
+      </class> <!-- runner.RunIndividuals -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
