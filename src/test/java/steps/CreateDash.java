@@ -13,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import parentClass.Baseclass;
+
 public class CreateDash extends Baseclass {
 @Test
 	public static void main(String[] args) throws InterruptedException{

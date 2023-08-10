@@ -1,4 +1,4 @@
-package steps;
+package parentClass;
 
 import java.time.Duration;
 import org.openqa.selenium.chrome.ChromeDriver;
